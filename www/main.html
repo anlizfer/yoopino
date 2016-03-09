@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<!--
+    Copyright (c) 2012-2014 Adobe Systems Incorporated. All rights reserved.
+
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <!--<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />-->
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <link rel="stylesheet" href="assets/jquery_mobile/jquery.mobile-1.4.5.min.css" />
+        <script src="assets/jquery/jquery-1.12.0.min.js"></script>
+        <script src="assets/jquery_mobile/jquery.mobile-1.4.5.min.js"></script>
+        <script src="http://maps.googleapis.com/maps/api/js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>YoOpino</title>
+
+        <style type="text/css">
+            .sel_item{
+                width:100%; 
+                
+                padding-bottom:10px; 
+                padding-top:10px; 
+                background-color:#fff; 
+                color:#000;  
+                border-radius:9px; 
+                float:left; 
+                margin-bottom:10px; 
+            }
+
+           
+
+            .sel_item_active{
+                background-color:#2DCFEB; 
+                color:#fff;  
+            }
+
+            .texto_tutorial{
+                color: #000;
+                text-shadow:0px 0px #000000;
+            }
+
+            
+        </style>
+    </head>
+    <body>
+    
+
+    <div style="width:100%; height:52px; position:fixed; z-index:10;  bottom:0px;   ">
+
+        
+        <div style="width:33%; float:left; height:52px;">
+            <button style="width:100%; height:52px; color:#fff; background-color:#7B7B7B;" onclick="abrir_page(1,true)">Home</button>
+        </div>
+
+
+        <div style="width:33%; float:left; height:52px;">
+            <button style="width:100%; height:52px; color:#fff; background-color:#7B7B7B;" onclick="abrir_page(88,false)">Votaciones</button>
+        </div>
+
+         <div style="width:34%; float:left; height:52px;">
+            <button style="width:100%; height:52px;  color:#fff; background-color:#7B7B7B;" onclick="abrir_page(99,false)">Ecuestas</button>
+        </div>
+        
+    </div>
+
+
+    <div style="width:100px; height:42px; position:fixed; z-index:10;  top:0px; right:10px;   " id="nav_tuto">
+
+        <div style="width:50%; float:left; height:52px;">
+            <button style="width:100%; height:42px; color:#fff; background-color:#7B7B7B;" onclick="preview_tuto()">&lt;</button>
+        </div>
+
+         <div style="width:50%; float:left; height:52px;">
+            <button style="width:100%; height:42px;  color:#fff; background-color:#7B7B7B;" onclick="next_tuto()">&gt;</button>
+        </div>
+        
+    </div>
+
+    
+    <div data-role="page" id="foo1" style="background-image:url(img/background_app.jpg); background-position:center; background-size:cover;">
+
+        
+        <div role="main" class="ui-content" style="text-align:center; position:relative;">
+            
+            <br />
+            
+            
+        </div>
+
+    </div>
+
+
+
+    <div data-role="page" id="foo2" style="background-image:url(img/background_app_gen2.jpg); background-position:center; background-size:cover;">
+
+        
+        <div role="main" class="ui-content" style="text-align:center; position:relative;">
+            
+            <br />
+             <br />
+
+            <h1 style="    color: #fff; text-shadow: -2px 2px #1D1D1D;">Bienvenido a YoOpino</h1>
+            <br />
+            <br />
+
+            <img src="img/logo_med.png">
+
+            <br />
+            <br />
+
+            <p style="text-transform: lowercase;" class="texto_tutorial">YO OPINO es una App Movil para que puedas crear votaciones en linea, urnas virtuales, Encuestas de satisfacción del cliente, investigación de mercados, estudios de opinión y mucho más.</p>
+            <br />
+            
+        </div>
+
+    </div>
+
+
+    <div data-role="page" id="foo3" style="background-image:url(img/background_app_gen2.jpg); background-position:center; background-size:cover;">
+
+        
+        <div role="main" class="ui-content" style="text-align:center; position:relative;">
+            
+            <br />
+             <br />
+            <h1 style="    color: #fff; text-shadow: -2px 2px #1D1D1D;">Tutorial 1 - Votaciones</h1>
+            <br />
+             <p class="texto_tutorial">1. Debe Escribir el código de la encuesta que le da el moderador</p>
+             <p class="texto_tutorial">2. Escriba el código de Usuario asignado.</p>
+             <p class="texto_tutorial">3. Click en el botón cargar encuesta.</p>
+             <p class="texto_tutorial">4. Seleccione la Respuesta</p>
+             <p class="texto_tutorial">5. Click en el botón para pasar a la siguiente pregunta.</p>
+            
+            <br />
+            <img src="img/mockup_1.png" style="width:100%;">
+            <br />
+            <br />
+            
+        </div>
+
+    </div>
+
+
+     <div data-role="page" id="foo4" style="background-image:url(img/background_app_gen2.jpg); background-position:center; background-size:cover;">
+
+        
+        <div role="main" class="ui-content" style="text-align:center; position:relative;">
+            
+            <br />
+             <br />
+            <h1 style="    color: #fff; text-shadow: -2px 2px #1D1D1D;">Tutorial 2 - Encuesta</h1>
+             <p class="texto_tutorial">1. Debe Seleccionar Encuesta</p>
+             <p class="texto_tutorial">2. Seleccione la respuesta</p>
+             <p  class="texto_tutorial">3. Click en el botón para pasar a la siguiente pregunta.</p>
+            <br />
+            <img src="img/mockup_2.png" style="width:100%;">
+            
+        </div>
+
+    </div>
+
+
+    
+
+
+
+    <div data-role="page" id="foo_votaciones" style="background-image:url(img/background_app_gen.jpg); background-position:center; background-size:cover;">
+        <div style="width:100%; float:left;  text-align:center; padding-top: 30px; ">
+            
+           <h1><strong>Votaciones</strong></h1>
+            
+            <br />
+            <img src="img/logo_med.png">
+            <br />
+            <br />
+          
+
+            <span><strong>Código Votación:</strong></span><br />
+            <center>
+                <div style="width:250px;">
+                    <input type="text" class="form-control" style="text-align:center" id="txt_codigo_encuesta" placeholder="Código Votación">
+                </div>
+            </center>
+            <br />
+            <span><strong>Código Usuario:</strong></span><br />
+            <center>
+                <div style="width:250px;">
+                    <input type="text" class="form-control" style="text-align:center" id="txt_codigo_usuario" placeholder="Código Usuario">
+                </div>
+            </center>
+
+            <br />
+           
+            <center>
+                <div style="width:250px;">
+                   <button onclick="abrir_bienvenida()">Cargar Encuesta</button>
+                </div>
+            </center>
+
+
+            
+
+        </div>
+    </div>
+
+
+    <!-- Bienvenida a la Encuesta -->
+
+    <div data-role="page" id="foo_bienvenida" style="background-image:url(img/background_app_gen.jpg); background-position:center; background-size:cover;">
+        <div style="width:100%; float:left;  text-align:center; padding-top: 30px;">
+            <center>
+                
+           
+                <div style="width:80%; padding:10px; border:solid 1px #A2A2A2; border-radius:9px;  background-color:rgba(48, 108, 150, 0.28);   ">
+                    <h3><strong>Bienvenido a la Encuesta: <span id="titulo_encuesta"></span></strong></h3>
+                </div>
+                
+                
+                 <div style="width:80%; padding:10px;">
+                    
+                    <div id="logo_empresa" style="width:100%; height:120px; background-position:center; background-size:contain; background-repeat:no-repeat;">
+                        
+                    </div>
+
+                    <p id="descripcion_encuesta"></p>
+
+
+
+                    <br />
+                   
+                   
+                    <div style="width:250px;">
+                       <button onclick="empezar_encuesta()">Empezar Ahora !!</button>
+                    </div>
+                </div>
+               
+            </center>
+              
+        </div>
+    </div>
+
+    <!-- Encuesta Contesta -->
+
+
+    <div data-role="page" id="foo_encuesta" style="background-image:url(img/background_app_gen.jpg); background-position:center; background-size:cover;">
+        <div style="width:100%; float:left;  text-align:center;">
+            <center>
+                
+                <br />
+
+                <div style="width:80%; padding:10px; border:solid 1px #A2A2A2; border-radius:9px;  background-color:rgba(48, 108, 150, 0.28); ">
+                    <h3><strong id="titulo_pregunta"></strong></h3>
+                </div>
+                
+                
+                 <div style="width:80%;">
+
+                    <div id="contain_respuesta">
+                        
+                    </div>
+                    
+                     
+                    
+
+
+
+                            
+                    
+                    <br />
+                    <br />
+                   
+                   
+                    <div style="width:250px;">
+                       <button onclick="guardar_respuesta()">Siguiente Pregunta &gt;&gt; </button>
+                    </div>
+                </div>
+               
+            </center>
+              
+        </div>
+    </div>
+
+
+    <div data-role="page" id="foo_gracias" style="background-image:url(img/background_app_gen.jpg); background-position:center; background-size:cover;">
+        <div style="width:100%; float:left;  text-align:center;">
+            <center>
+                
+                <br />
+
+                <div style="width:80%; padding:10px; border:solid 1px #A2A2A2; border-radius:9px;  background-color:#DDD; font-size:40px; ">
+                    <h3><strong id="titulo_pregunta">Gracias!!</strong></h3>
+                </div>
+                
+                
+                 <div style="width:80%;">
+
+                   
+            
+                    <p>Su votación será tenida en cuenta.</p>
+                    <br />        
+                    
+                  
+                    <br />
+                   
+                   
+                    <div style="width:250px;">
+                       <button onclick="abrir_page(1,false)">Ir Al Inicio</button>
+                    </div>
+                </div>
+               
+            </center>
+              
+        </div>
+    </div>
+
+
+
+
+     <div data-role="page" id="foo_encuesta_publica" style="background-image:url(img/background_app_gen.jpg); background-position:center; background-size:cover;">
+        <div style="width:100%; float:left;  text-align:center; padding-top: 30px;">
+           <h1><strong>Encuestas</strong></h1>
+            
+            <p>YO OPINO es una plataforma para que puedas </p>
+            <br />
+
+            <div style="width:100%; height:auto; overflow-y:scroll;" id="conten_listado">   
+                <ul data-role="listview" id="listado_encuesta">
+                   
+                  
+                </ul>
+            </div>
+              
+        </div>
+    </div>
+
+
+
+
+    <script type="text/javascript" src="js/index.js">
+    app.initialize();
+
+    </script>
+    <script type="text/javascript">
+
+    var servidor_ws="http://app.yoopino.co/";
+
+    var pagina_actual=1;
+    function next_tuto(){
+        if(pagina_actual<4){        
+            pagina_actual++;
+            abrir_page(pagina_actual,false);
+        }
+    }
+
+    function preview_tuto(){
+        if(pagina_actual>1){
+            pagina_actual--;
+            abrir_page(pagina_actual,true);
+        }
+    }
+
+
+    $( document ).ready(function() {
+        var height_panel=documentHeight()-203;
+        $("#conten_listado").css("height",""+height_panel+"px");
+    });
+        
+
+
+    function abrir_page(no_page,dir){
+        
+        var nombre_page="";
+
+
+        $("#nav_tuto").hide();
+        if(no_page==99){
+
+            nombre_page="#foo_encuesta_publica";
+            abrir_publico();
+        }else if(no_page==88){
+           nombre_page="#foo_votaciones";
+        }else{
+            $("#nav_tuto").show();
+            nombre_page="#foo"+no_page;
+        }
+
+
+        if(no_page==1){
+            pagina_actual=1;
+        }
+
+
+
+         
+
+        $.mobile.changePage(nombre_page,{transition:"slide",changeHash: false,reverse: dir});
+
+
+    }
+
+
+    var arraPreguntas=new Array();
+    var arraRespuesta=new Array();
+    var codigo_encuesta="";
+    var codigo_individuo="";
+
+    function abrir_bienvenida(){
+        
+
+         codigo_encuesta=$("#txt_codigo_encuesta").val();
+         codigo_individuo=$("#txt_codigo_usuario").val();
+
+         var request = $.ajax({
+          url: servidor_ws+"get_info_app.php",
+          type: "POST",
+          data: {codigo_encuesta:""+codigo_encuesta, codigo_individuo:codigo_individuo, tipo_result:"json"}
+           });
+
+
+          
+            arraPreguntas=new Array();
+         
+            arraRespuesta=new Array();
+
+       
+            request.done(function(obj) {                       
+             
+              var cadena_combo="";
+              if( obj.status == "ok"){
+                var objdata=obj.datos;
+                var objpregunta=obj.preguntas;
+                var objrespuesta=obj.respuesta;
+               
+                for(var i=0;i<objdata.length;i++){
+                    $("#descripcion_encuesta").html(objdata[i].descripcionEncuesta);
+                    $("#titulo_encuesta").html(objdata[i].nombreEncuesta);
+                    $("#logo_empresa").css("background-image","url("+servidor_ws+"assets/logo/"+objdata[i].logoUsuario+")");
+                }
+
+                for(var i=0;i<objpregunta.length;i++){
+                    arraPreguntas.push(objpregunta[i]);
+                }
+
+                for(var i=0;i<objrespuesta.length;i++){
+                    arraRespuesta.push(objrespuesta[i]);
+                }
+
+                $.mobile.changePage("#foo_bienvenida",{transition:"slide",changeHash: false});
+              
+              }else{
+                alert(""+obj.mensaje);
+              }
+
+            });     
+
+             //respuesta si falla
+            request.fail(function(jqXHR, textStatus) {
+              alert( "Error de servidor  " + textStatus );
+            });
+        
+    }
+
+    var conteo_pregunta=0;
+
+    function empezar_encuesta(){
+
+        cargar_info_preguntas();
+
+        $.mobile.changePage("#foo_encuesta",{transition:"slide",changeHash: false});
+
+        conten_listado
+
+    }
+
+    var id_pregunta_actual="";
+
+    function cargar_info_preguntas(){
+
+
+        if(conteo_pregunta<arraPreguntas.length){
+
+            var titulo_pregunta="";
+
+            titulo_pregunta=arraPreguntas[conteo_pregunta].nombrePregunta;
+            id_pregunta_actual=arraPreguntas[conteo_pregunta].IdPregunta;
+            $("#titulo_pregunta").html((conteo_pregunta+1)+". "+titulo_pregunta);
+
+            var cadena_respuestas="";
+            var cont=0;
+
+            for(var i=0;i<arraRespuesta.length;i++){
+
+                if(arraRespuesta[i].IdPregunta==id_pregunta_actual){     
+
+
+
+                    cadena_respuestas+='<div class="sel_item" id="sel_item_'+i+'" onclick="seleccionar_item('+i+','+arraRespuesta[i].IdRespuesta+','+arraRespuesta[i].IdPregunta+')">';
+                    cadena_respuestas+='    <div style="width:20%; float:left;">';
+                    cadena_respuestas+='    '+get_abc(cont)+".";
+                    cadena_respuestas+='    </div>';
+                    cadena_respuestas+='    <div style="width:75%; float:left; font-size: 12px; padding-right:5px; text-align:left;">';
+                    cadena_respuestas+='       '+arraRespuesta[i].descripcionRespuesta;
+                    cadena_respuestas+='    </div>';
+                    cadena_respuestas+=' </div>';
+
+                    cont++;
+
+                }
+              
+            }
+
+            $("#contain_respuesta").html("<br />"+cadena_respuestas);
+
+            conteo_pregunta++;
+        }else{
+            $.mobile.changePage("#foo_gracias",{transition:"slide",changeHash: false});
+        }
+
+       
+
+
+    }
+
+    function seleccionar_item(id,id_respuesta,id_preg){
+        $(".sel_item").removeClass("sel_item_active");
+        $("#sel_item_"+id).addClass("sel_item_active");
+        codigo_respuesta=""+id_respuesta;
+        id_pregunta=id_preg;
+    }
+
+
+
+    function get_abc(id){
+        var arraLetras="ABCDEFGHIJKLMNÑOPQRSTUVWXYZ";
+
+        return arraLetras.charAt(id);
+    }
+
+    
+
+
+    function guardar_respuesta(){
+
+        /*
+            $codigo_respuesta=@$_REQUEST["codigo_respuesta"];
+            $codigo_individuo=@$_REQUEST["codigo_individuo"];
+            $codigo_pregunta=@$_REQUEST["codigo_pregunta"];
+        */
+
+        var codigo_pregunta=id_pregunta;
+
+
+         var request = $.ajax({
+          url: servidor_ws+"contestar_encuesta.php",
+          type: "POST",
+          data: {codigo_pregunta:""+codigo_pregunta, 
+                codigo_individuo:codigo_individuo, 
+                codigo_respuesta:codigo_respuesta, 
+                codigo_encuesta:codigo_encuesta,  
+                tipo_result:"json"}
+           });
+
+       
+            request.done(function(obj) {
+             
+              var cadena_combo="";
+              if( obj.status == "ok"){
+               
+               cargar_info_preguntas();
+
+                
+              
+              }else{
+                alert(""+obj.mensaje);
+              }
+
+            });     
+
+             //respuesta si falla
+            request.fail(function(jqXHR, textStatus) {
+              alert( "Error de servidor  " + textStatus );
+            });
+        
+    }
+
+
+    function abrir_publico(){
+        
+
+       
+
+         var request = $.ajax({
+          url: servidor_ws+"get_info_app_public.php",
+          type: "POST",
+          data: {tipo_result:"json"}
+           });
+
+       
+            request.done(function(obj) {                       
+             
+              var cadena_combo="";
+              if( obj.status == "ok"){
+                var objdata=obj.datos;
+                var cadena_listado="";
+                for(var i=0;i<objdata.length;i++){
+                    cadena_listado+=' <li><a href="#" onclick="abrir_encuesta_publica('+objdata[i].IdEncuesta+')" >';
+                    cadena_listado+='      <img src="'+servidor_ws+"assets/logo/"+objdata[i].logoUsuario+'" />';
+                    cadena_listado+='       <h3>'+objdata[i].nombreEncuesta+'</h3>';
+                    cadena_listado+='       <p>'+objdata[i].nombresUsuario+'</p>';
+                    cadena_listado+='</a></li>';
+                }
+
+                $("#listado_encuesta").html(cadena_listado);
+                $("#listado_encuesta").listview("refresh");
+              
+              }else{
+                alert(""+obj.mensaje);
+              }
+
+            });     
+
+             //respuesta si falla
+            request.fail(function(jqXHR, textStatus) {
+              alert( "Error de servidor  " + textStatus );
+            });
+        
+    }
+
+    function abrir_encuesta_publica(id_encuesta){
+
+         var rnd_number=Math.random();
+
+         var request = $.ajax({
+          url: servidor_ws+"get_preguntas.php",
+          type: "POST",
+          data: {codigo_encuesta:""+id_encuesta, tipo_result:"json",rnd:rnd_number}
+           });
+
+       
+
+            arraPreguntas=new Array();
+         
+            arraRespuesta=new Array();
+
+            request.done(function(obj) {
+             
+              var cadena_combo="";
+              if( obj.status == "ok"){
+                var objdata=obj.datos;
+                var objpregunta=obj.preguntas;
+                var objrespuesta=obj.respuesta;
+               
+                for(var i=0;i<objdata.length;i++){
+                    $("#descripcion_encuesta").html(objdata[i].descripcionEncuesta);
+                    $("#titulo_encuesta").html(objdata[i].nombreEncuesta);
+                    $("#logo_empresa").css("background-image","url("+servidor_ws+"assets/logo/"+objdata[i].logoUsuario+")");
+                }
+
+                for(var i=0;i<objpregunta.length;i++){
+                    arraPreguntas.push(objpregunta[i]);
+                }
+
+                for(var i=0;i<objrespuesta.length;i++){
+                    arraRespuesta.push(objrespuesta[i]);
+                }
+
+                conteo_pregunta=0;
+
+                $.mobile.changePage("#foo_bienvenida",{transition:"slide",changeHash: false});
+              
+              }else{
+                alert(""+obj.mensaje);
+              }
+
+            });     
+
+             //respuesta si falla
+            request.fail(function(jqXHR, textStatus) {
+              alert( "Error de servidor  " + textStatus );
+            });
+    }
+
+    </script>
+</body>
+</html>
