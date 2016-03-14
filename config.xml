@@ -1,4 +1,4 @@
-<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="co.yoopino.app" version="1.0.0">
+<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="co.yoopino.app" version="1.0.1">
   <name>YoOpino</name>
   <description>YO OPINO es una plataforma para que puedas crear votaciones en linea, urnas virtuales, encuestas.apoyamos con nuestra app móvil, encuestas de satisfacción del cliente, investigación de mercados, estudios de opinión y mucho más. Así podrás mejorar la toma de decisiones en tu organización.</description>
   <author href="http://SmartCubeinc.com" email="gerencia@agromk.com">SmartCubeInc</author>
